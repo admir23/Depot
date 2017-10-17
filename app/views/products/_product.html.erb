@@ -1,0 +1,22 @@
+
+<div class="col-sm-6 col-md-4 col-lg-3 mt-4">
+  <div class="card">
+	<%= link_to product_path(product) do %>
+	<%= image_tag(product.image_url, class: 'card-img-top') %> 
+  <% end %>    
+  <div class="card-block">
+	  <h5 class="mt-2 mb-0"><%= product.title %></h5>
+	  <br>
+	  <p><%= truncate(strip_tags(product.description),length: 80) %></p>
+	  <br>
+	  <div class="row">
+		  <p><%= link_to 'Show', product, class:'btn btn-sm btn-primary' %></p>
+		  &nbsp;
+		  <p><%= link_to 'Edit', edit_product_path(product), class:'btn btn-sm btn-secondary' %></p>
+		  &nbsp;
+	    <p><%= link_to 'Destroy', product, method: :delete, class:'btn btn-sm btn-danger', data: { confirm: 'Are you sure?' } %></p>
+    </div>
+  </div>
+ </div>
+</div>
+
